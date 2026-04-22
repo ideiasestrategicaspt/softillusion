@@ -126,7 +126,7 @@ export const TESTEMUNHOS = [
     servico: "Estação elevatória — Condomínio",
     rating: 5,
     texto:
-      "Como administrador de condomínio é difícil achar fornecedores fiáveis. Entregam relatório por escrito e fatura mensal — exatamente o que precisamos.",
+      "Como administrador de condomínio é difícil achar fornecedores fiáveis. Entregaram exatamente o que precisamos.",
   },
 ] as const;
 
