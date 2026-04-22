@@ -7,16 +7,15 @@ export const Footer = () => {
   return (
     <footer id="contactos" className="bg-ink text-white pt-20 pb-8">
       <div className="container-page">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <img src={logo} alt="Logótipo Softillusion" className="h-14 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm text-white/65 leading-relaxed">
               Desentupimentos e aspiração industrial 24h. {COMPANY.serviceArea}.
             </p>
             <div className="mt-5 flex gap-3">
-              <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">IG</a>
-              <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">FB</a>
-              <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">in</a>
+              <a href="https://www.instagram.com/sos.softillusion/" target="_blank" rel="noopener" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">IG</a>
+              <a href="https://www.facebook.com/profile.php?id=61575592600999" target="_blank" rel="noopener" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">FB</a>
             </div>
           </div>
 
@@ -65,18 +64,6 @@ export const Footer = () => {
               <li><a href="#testemunhos" className="hover:text-white">Testemunhos</a></li>
               <li><a href="#orcamento" className="hover:text-white">Pedir orçamento</a></li>
               <li><a href="/area-cliente" className="hover:text-white">Área de cliente</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-brand-light mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-2.5 text-sm text-white/70">
-              <li><a href="#" className="hover:text-white">Política de Privacidade</a></li>
-              <li><a href="#" className="hover:text-white">Termos e Condições</a></li>
-              <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener" className="hover:text-white">Livro de Reclamações</a></li>
-              <li><a href="#" className="hover:text-white">Resolução Alternativa de Litígios</a></li>
             </ul>
           </div>
         </div>
