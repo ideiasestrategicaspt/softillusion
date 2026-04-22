@@ -1,0 +1,69 @@
+import { Star, Quote } from "lucide-react";
+import { TESTEMUNHOS, STATS } from "@/lib/constants";
+
+export const Testemunhos = () => {
+  return (
+    <section id="testemunhos" className="relative bg-background py-20 md:py-28">
+      <div className="container-page">
+        <div className="max-w-3xl mx-auto text-center reveal">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">
+            Testemunhos reais
+          </p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-foreground">
+            Mais de 1500 clientes já confiaram em nós
+          </h2>
+          <p className="mt-5 text-base md:text-lg text-muted-foreground">
+            Desentupir é fácil. Resolver bem é que é raro. Veja o que dizem os nossos clientes.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {TESTEMUNHOS.map((t, idx) => (
+            <article
+              key={t.nome + idx}
+              className="reveal relative rounded-2xl border border-border bg-card p-7 shadow-soft hover:shadow-elevated transition-all"
+              style={{ transitionDelay: `${idx * 50}ms` }}
+            >
+              <Quote className="absolute top-5 right-5 h-8 w-8 text-brand/15" />
+              <div className="flex gap-0.5 text-brand">
+                {Array.from({ length: t.rating }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/85">"{t.texto}"</p>
+              <div className="mt-6 flex items-center gap-3 pt-5 border-t border-border">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-brand text-white font-bold">
+                  {t.nome.split(" ").map((p) => p[0]).join("").slice(0, 2)}
+                </div>
+                <div>
+                  <div className="font-bold text-foreground text-sm">{t.nome}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {t.localidade} · {t.servico}
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Métricas animadas */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 reveal">
+          {[
+            { v: STATS.intervencoes, l: "Intervenções em 2025" },
+            { v: STATS.taxaResolucao, l: "Resolução à primeira" },
+            { v: `${STATS.tempoChegadaMin}min`, l: "Tempo médio de chegada" },
+            { v: STATS.rating, l: "Avaliação média Google" },
+          ].map((m) => (
+            <div
+              key={m.l}
+              className="rounded-2xl bg-gradient-brand p-6 md:p-7 text-white text-center shadow-brand"
+            >
+              <div className="text-3xl md:text-4xl font-extrabold">{m.v}</div>
+              <div className="mt-1 text-xs md:text-sm text-white/85">{m.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
