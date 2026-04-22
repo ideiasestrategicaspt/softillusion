@@ -45,7 +45,7 @@ export const Hero = () => {
             </p>
 
             {/* Trust badges */}
-            <div className="mt-7 flex flex-wrap gap-2">
+            <div className="mt-7 hidden lg:flex flex-wrap gap-2">
               <Badge>
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-success/70 animate-pulse-dot" />
@@ -109,6 +109,21 @@ export const Hero = () => {
                   <span className="font-bold text-white"> min</span>
                 </p>
               </div>
+            </div>
+
+            {/* Trust badges (mobile/tablet, abaixo da caixa Em direto) */}
+            <div className="mt-6 flex flex-wrap gap-2 lg:hidden">
+              <Badge>
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-success/70 animate-pulse-dot" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+                </span>
+                Equipa disponível agora
+              </Badge>
+              <Badge><Clock className="h-3.5 w-3.5 text-brand-light" /> Resposta em 30 min</Badge>
+              <Badge><BadgeEuro className="h-3.5 w-3.5 text-brand-light" /> Orçamento grátis</Badge>
+              <Badge><ShieldCheck className="h-3.5 w-3.5 text-brand-light" /> Preço fechado</Badge>
+              <Badge><Truck className="h-3.5 w-3.5 text-brand-light" /> Frota própria</Badge>
             </div>
           </div>
         </div>
