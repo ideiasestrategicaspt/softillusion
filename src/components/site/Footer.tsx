@@ -1,4 +1,4 @@
-import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/softillusion-logo.png";
 import { COMPANY } from "@/lib/constants";
 
@@ -14,8 +14,12 @@ export const Footer = () => {
               Desentupimentos e aspiração industrial 24h. {COMPANY.serviceArea}.
             </p>
             <div className="mt-5 flex gap-3">
-              <a href="https://www.instagram.com/sos.softillusion/" target="_blank" rel="noopener" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">IG</a>
-              <a href="https://www.facebook.com/profile.php?id=61575592600999" target="_blank" rel="noopener" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">FB</a>
+              <a href="https://www.instagram.com/sos.softillusion/" target="_blank" rel="noopener" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61575592600999" target="_blank" rel="noopener" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors">
+                <Facebook className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
