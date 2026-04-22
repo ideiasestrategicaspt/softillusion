@@ -35,7 +35,6 @@ export const Hero = () => {
 
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold leading-[1.05]">
               Entupimento resolvido <span className="text-gradient-brand">hoje</span>.
-              <br className="hidden sm:block" /> Equipa no local em minutos.
             </h1>
 
             <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed">
