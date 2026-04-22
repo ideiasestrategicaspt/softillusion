@@ -52,7 +52,7 @@ export const Testemunhos = () => {
             { v: STATS.intervencoes, l: "Intervenções em 2025" },
             { v: STATS.taxaResolucao, l: "Resolução à primeira" },
             { v: `${STATS.tempoChegadaMin}min`, l: "Tempo médio de chegada" },
-            { v: STATS.rating, l: "Avaliação média Google" },
+            { v: "24/7", l: "Sempre disponível" },
           ].map((m) => (
             <div
               key={m.l}
