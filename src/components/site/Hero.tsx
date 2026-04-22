@@ -34,11 +34,11 @@ export const Hero = () => {
               Desentupimentos 24h · Todo Portugal
             </p>
 
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold leading-[1.05]">
+            <h1 className="mt-4 text-5xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold leading-[1.05]">
               Entupimento resolvido <span className="text-gradient-brand">hoje</span>.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed text-justify">
+            <p className="mt-6 max-w-2xl text-sm sm:text-lg text-white/75 leading-relaxed text-justify">
               Doméstico e empresarial. Orçamento gratuito, preço fechado antes de
               começar e sem custos ocultos. Do Minho ao Algarve e em toda a fronteira
               com Espanha, 24 horas por dia, 365 dias por ano.
