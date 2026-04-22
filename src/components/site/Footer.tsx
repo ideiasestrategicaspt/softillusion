@@ -70,7 +70,6 @@ export const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
           <p>© {ano} {COMPANY.name} — {COMPANY.tagline}. Todos os direitos reservados.</p>
-          <p>NIF: [a definir]</p>
         </div>
       </div>
     </footer>
