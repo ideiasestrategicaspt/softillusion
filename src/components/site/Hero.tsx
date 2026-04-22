@@ -37,10 +37,10 @@ export const Hero = () => {
               Entupimento resolvido <span className="text-gradient-brand">hoje</span>.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed">
+            <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed text-justify">
               Doméstico e empresarial. Orçamento gratuito, preço fechado antes de
               começar e sem custos ocultos. Do Minho ao Algarve e em toda a fronteira
-              com Espanha — 24 horas por dia, 365 dias por ano.
+              com Espanha, 24 horas por dia, 365 dias por ano.
             </p>
 
             {/* Trust badges */}
