@@ -93,8 +93,7 @@ export const TESTEMUNHOS = [
     localidade: "Porto",
     servico: "Manutenção B2B — Restauração",
     rating: 5,
-    texto:
-      "Temos contrato anual para manutenção dos separadores de gordura nos restaurantes. Pontuais, profissionais e com relatórios detalhados sempre.",
+    texto: "Temos contrato anual para manutenção dos separadores de gordura nos restaurantes. Pontuais, profissionais como sempre.",
   },
   {
     nome: "Ana R.",
