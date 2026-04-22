@@ -22,7 +22,7 @@ export const Servicos = () => {
       stopOnInteraction: false,
       stopOnMouseEnter: false,
       stopOnFocusIn: false,
-　  })
+    })
   );
   const resumeTimer = useRef<number | null>(null);
 
