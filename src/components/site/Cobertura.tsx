@@ -1,6 +1,5 @@
 import { MapPin } from "lucide-react";
 import { DISTRITOS } from "@/lib/constants";
-import portugalMap from "@/assets/portugal-map.png";
 
 const principais = ["Lisboa","Porto","Coimbra","Braga","Faro","Évora","Viseu","Guarda","Bragança"];
 
@@ -27,15 +26,22 @@ export const Cobertura = () => {
           <div className="relative reveal">
             <div className="relative aspect-[4/5] mx-auto max-w-md rounded-3xl bg-gradient-brand p-1 shadow-elevated">
               <div className="relative h-full w-full rounded-[22px] bg-ink p-6 overflow-hidden">
-                {/* Mapa real de Portugal Continental como base, com overlay azul brand */}
-                <div className="relative h-full w-full">
-                  <img
-                    src={portugalMap}
-                    alt="Mapa de Portugal Continental"
-                    className="absolute inset-0 h-full w-full object-contain opacity-90"
+                {/* Silhueta de Portugal — apenas a forma, preenchida com gradiente do tema */}
+                <div className="relative h-full w-full" role="img" aria-label="Mapa de Portugal Continental">
+                  <div
+                    className="absolute inset-0"
                     style={{
-                      filter:
-                        "invert(1) sepia(1) saturate(6) hue-rotate(175deg) brightness(1.05) drop-shadow(0 0 8px hsl(204 70% 63% / 0.6))",
+                      background:
+                        "linear-gradient(135deg, hsl(204 70% 63%) 0%, hsl(209 64% 29%) 100%)",
+                      WebkitMaskImage: "url(/portugal-silhouette.png)",
+                      maskImage: "url(/portugal-silhouette.png)",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskPosition: "center",
+                      maskPosition: "center",
+                      WebkitMaskSize: "contain",
+                      maskSize: "contain",
+                      filter: "drop-shadow(0 0 10px hsl(204 70% 63% / 0.5))",
                     }}
                   />
                   {/* Pontos das cidades principais sobrepostos (coordenadas em % relativas ao mapa) */}
