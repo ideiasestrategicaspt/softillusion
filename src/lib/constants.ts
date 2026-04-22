@@ -8,7 +8,7 @@ export const COMPANY = {
   whatsapp: "351967097617",
   email: "softillusiondesentupimentos@gmail.com",
   emailB2B: "softillusiondesentupimentos@gmail.com",
-  serviceArea: "Portugal Continental e zona fronteiriça com Espanha",
+  serviceArea: "Portugal Continental e zona fronteira com Espanha",
 } as const;
 
 export const STATS = {
@@ -22,7 +22,7 @@ export const STATS = {
 export const DISTRITOS = [
   "Aveiro","Beja","Braga","Bragança","Castelo Branco","Coimbra","Évora","Faro",
   "Guarda","Leiria","Lisboa","Portalegre","Porto","Santarém","Setúbal","Viana do Castelo",
-  "Vila Real","Viseu","Zona fronteiriça Espanha"
+  "Vila Real","Viseu","Zona fronteira Espanha"
 ] as const;
 
 export const SERVICOS = [
