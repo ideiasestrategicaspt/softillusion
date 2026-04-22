@@ -23,9 +23,7 @@ export const B2B = () => {
                 Parceiros das maiores empresas e indústrias do país
               </h2>
               <p className="mt-5 text-white/85 text-base md:text-lg leading-relaxed max-w-xl">
-                Desenvolvemos contratos personalizados de manutenção e resposta rápida
-                para indústria, construção civil, condomínios, hotelaria, restauração e
-                entidades públicas. Faturação mensal, SLA garantido e equipa dedicada.
+                Desenvolvemos contratos personalizados de manutenção e resposta rápida para indústria, construção civil, condomínios, hotelaria, restauração e entidades públicas. Acordo de Nível de Serviço garantido e equipa dedicada.
               </p>
               <a
                 href="#orcamento"
