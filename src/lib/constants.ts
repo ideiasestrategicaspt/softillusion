@@ -16,7 +16,7 @@ export const STATS = {
   anos: "+10",
   rating: "4.8/5",
   taxaResolucao: "98%",
-  tempoChegadaMin: "35",
+  tempoChegadaMin: "50",
 } as const;
 
 export const DISTRITOS = [

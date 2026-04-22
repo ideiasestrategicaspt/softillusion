@@ -98,7 +98,7 @@ export const Hero = () => {
               <div className="grid grid-cols-2 gap-5">
                 <Stat value={STATS.intervencoes} label="Intervenções realizadas" />
                 <Stat value={STATS.anos} label="Anos de experiência" />
-                <Stat value={STATS.rating} label="Avaliação Google ⭐" />
+                <Stat value={STATS.taxaResolucao} label="Resolução à primeira" />
                 <Stat value="24/7" label="Sempre disponível" />
               </div>
               <div className="mt-6 rounded-xl bg-white/5 border border-white/10 p-4 flex items-center gap-3">
