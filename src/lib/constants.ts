@@ -12,7 +12,7 @@ export const COMPANY = {
 } as const;
 
 export const STATS = {
-  intervencoes: "+1500",
+  intervencoes: "+1000",
   anos: "+10",
   rating: "4.8/5",
   taxaResolucao: "98%",
