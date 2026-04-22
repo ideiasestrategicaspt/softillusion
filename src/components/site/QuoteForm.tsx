@@ -378,19 +378,6 @@ export const QuoteForm = () => {
               </Field>
 
               <div className="space-y-3 pt-2">
-                <label className="flex items-start gap-3 text-sm text-foreground/85 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    {...register("rgpd")}
-                    className="mt-1 h-4 w-4 rounded border-input text-brand focus:ring-brand"
-                  />
-                  <span>
-                    Autorizo o tratamento dos meus dados para resposta ao pedido de
-                    orçamento, nos termos da Política de Privacidade. <span className="text-destructive">*</span>
-                  </span>
-                </label>
-                {errors.rgpd && <FieldError msg={errors.rgpd.message as string} />}
-
                 <label className="flex items-start gap-3 text-sm text-muted-foreground cursor-pointer">
                   <input
                     type="checkbox"
