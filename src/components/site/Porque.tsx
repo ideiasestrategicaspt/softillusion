@@ -1,4 +1,4 @@
-import { Clock, Tag, Users, Truck, ShieldCheck, Leaf } from "lucide-react";
+import { Clock, Tag, Users, Truck } from "lucide-react";
 
 const pilares = [
   {
@@ -21,24 +21,6 @@ const pilares = [
     titulo: "Frota própria de hidroaspiradores",
     desc: "Equipamento industrial de última geração para resolver qualquer dimensão de problema. Sem limites de caudal nem de acesso.",
   },
-  {
-    icon: ShieldCheck,
-    titulo: "Garantia escrita do serviço",
-    desc: "Todos os trabalhos são garantidos. Se o problema voltar no prazo acordado, voltamos sem cobrar.",
-  },
-  {
-    icon: Leaf,
-    titulo: "Resíduos tratados legalmente",
-    desc: "Cumprimos toda a legislação ambiental em vigor. Entregamos guia de acompanhamento de resíduos para tranquilidade das empresas.",
-  },
-];
-
-const selos = [
-  "APA · Licença ambiental",
-  "Transporte de resíduos",
-  "RGPD",
-  "Livro de Reclamações",
-  "⭐ 5 Estrelas Google",
 ];
 
 export const Porque = () => {
@@ -71,22 +53,6 @@ export const Porque = () => {
               <p className="mt-3 text-sm leading-relaxed text-white/65">{p.desc}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-14 reveal">
-          <p className="text-center text-xs uppercase tracking-widest text-white/50 mb-5">
-            Certificações & Conformidade
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {selos.map((s) => (
-              <span
-                key={s}
-                className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white/75"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
