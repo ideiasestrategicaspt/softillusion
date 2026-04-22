@@ -32,7 +32,6 @@ const schema = z.object({
   telefone: z.string().trim().regex(/^(\+?351\s?)?\d{9}$/, "Telemóvel inválido (9 dígitos)"),
   email: z.string().trim().email("Email inválido").max(255),
   descricao: z.string().trim().max(1000).optional(),
-  rgpd: z.literal(true, { message: "Tem de aceitar a política de privacidade" }),
   aceita_marketing: z.boolean().optional(),
 });
 
