@@ -29,10 +29,24 @@ export const Cobertura = () => {
               <div className="relative h-full w-full rounded-[22px] bg-ink p-6 overflow-hidden">
                 {/* Mapa real de Portugal Continental como base, com overlay azul brand */}
                 <div className="relative h-full w-full">
+                  {/* Fallback: silhueta simples em CSS caso a imagem/máscara falhe */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  >
+                    <div
+                      className="h-[90%] w-[55%] bg-gradient-to-b from-brand/40 via-primary/50 to-brand/30 opacity-60"
+                      style={{
+                        clipPath:
+                          "polygon(45% 0%, 70% 4%, 78% 12%, 72% 22%, 80% 30%, 88% 42%, 82% 55%, 90% 68%, 78% 80%, 70% 92%, 55% 100%, 38% 96%, 30% 84%, 22% 70%, 28% 55%, 18% 42%, 24% 28%, 20% 16%, 32% 6%)",
+                        filter: "blur(0.5px)",
+                      }}
+                    />
+                  </div>
                   <img
                     src={portugalMap}
                     alt="Mapa de Portugal Continental"
-                    className="absolute inset-0 h-full w-full object-contain opacity-90"
+                    className="relative z-10 absolute inset-0 h-full w-full object-contain opacity-90"
                     style={{
                       filter:
                         "invert(1) sepia(1) saturate(6) hue-rotate(175deg) brightness(1.05) drop-shadow(0 0 8px hsl(204 70% 63% / 0.6))",
@@ -41,7 +55,7 @@ export const Cobertura = () => {
                   {/* Pontos das cidades principais sobrepostos (coordenadas em % relativas ao mapa) */}
                   <svg
                     viewBox="0 0 200 380"
-                    className="absolute inset-0 h-full w-full"
+                    className="absolute inset-0 h-full w-full z-20"
                     preserveAspectRatio="xMidYMid meet"
                     aria-hidden
                   >
