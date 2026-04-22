@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import {
   Droplet, Truck, Container, Wind, ChefHat, Waves, Fuel, ArrowRight, type LucideIcon,
 } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { SERVICOS } from "@/lib/constants";
 import {
   Carousel,
@@ -15,16 +15,22 @@ const ICONS: Record<string, LucideIcon> = {
 };
 
 export const Servicos = () => {
-  const autoplay = useRef(
-    Autoplay({ delay: 2800, stopOnInteraction: false, stopOnMouseEnter: false })
+  const autoScroll = useRef(
+    AutoScroll({
+      speed: 0.6,
+      startDelay: 0,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+      stopOnFocusIn: false,
+　  })
   );
   const resumeTimer = useRef<number | null>(null);
 
   const pauseFor8s = () => {
-    autoplay.current.stop();
+    autoScroll.current.stop();
     if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
     resumeTimer.current = window.setTimeout(() => {
-      autoplay.current.play();
+      autoScroll.current.play();
     }, 8000);
   };
 
@@ -57,8 +63,8 @@ export const Servicos = () => {
           onTouchStartCapture={pauseFor8s}
         >
           <Carousel
-            opts={{ align: "start", loop: true }}
-            plugins={[autoplay.current]}
+            opts={{ align: "start", loop: true, dragFree: true, watchDrag: false }}
+            plugins={[autoScroll.current]}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
