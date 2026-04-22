@@ -25,7 +25,7 @@ export const Testemunhos = () => {
           </p>
         </div>
 
-        <div className="mt-14 reveal relative px-4 sm:px-12 pb-16 sm:pb-0">
+        <div className="mt-14 reveal relative px-4 sm:px-12 pb-24 sm:pb-0">
           <Carousel
             opts={{ align: "start", loop: true }}
             className="w-full"
