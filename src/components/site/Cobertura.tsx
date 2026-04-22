@@ -17,7 +17,7 @@ export const Cobertura = () => {
           </h2>
           <p className="mt-5 text-base md:text-lg text-muted-foreground">
             Com equipas distribuídas estrategicamente e presença reforçada na zona
-            fronteiriça com Espanha, garantimos tempos de resposta reduzidos de norte
+            fronteira com Espanha, garantimos tempos de resposta reduzidos de norte
             a sul do país.
           </p>
         </div>
@@ -82,7 +82,7 @@ export const Cobertura = () => {
               Onde atendemos
             </h3>
             <p className="text-muted-foreground mb-6">
-              Atendemos também a <strong className="text-foreground">zona fronteiriça Portugal-Espanha</strong>.
+              Atendemos também a <strong className="text-foreground">zona fronteira Portugal-Espanha</strong>.
               Cidades com tempo médio de resposta ≤ 35 min:
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
