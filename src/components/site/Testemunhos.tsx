@@ -25,7 +25,7 @@ export const Testemunhos = () => {
           </p>
         </div>
 
-        <div className="mt-14 reveal relative px-4 sm:px-12">
+        <div className="mt-14 reveal relative px-4 sm:px-12 pb-16 sm:pb-0">
           <Carousel
             opts={{ align: "start", loop: true }}
             className="w-full"
@@ -59,8 +59,8 @@ export const Testemunhos = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
-            <CarouselNext className="hidden sm:flex right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselPrevious className="left-1/2 -translate-x-[calc(100%+0.5rem)] top-auto bottom-0 translate-y-0 sm:left-0 sm:-translate-x-0 sm:top-1/2 sm:-translate-y-1/2 sm:bottom-auto h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="left-1/2 translate-x-2 top-auto bottom-0 translate-y-0 sm:left-auto sm:right-0 sm:translate-x-0 sm:top-1/2 sm:-translate-y-1/2 sm:bottom-auto h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
           </Carousel>
         </div>
 
