@@ -86,7 +86,7 @@ export const TESTEMUNHOS = [
     servico: "Desentupimento doméstico",
     rating: 5,
     texto:
-      "Cozinha inundada num domingo à noite. Em 25 minutos estavam cá e resolveram em menos de uma hora. Preço igual ao combinado ao telefone.",
+      "Cozinha inundada num domingo à noite. Em 45 minutos estavam cá e resolveram em menos de uma hora. Preço igual ao combinado ao telefone.",
   },
   {
     nome: "João P.",
