@@ -1,5 +1,6 @@
 import { Phone, Clock, ShieldCheck, BadgeEuro, Truck, ArrowRight } from "lucide-react";
 import { COMPANY, STATS } from "@/lib/constants";
+import { CountUp } from "@/components/CountUp";
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur">
@@ -95,16 +96,17 @@ export const Hero = () => {
                 Em direto
               </div>
               <div className="grid grid-cols-2 gap-5">
-                <Stat value={STATS.intervencoes} label="Intervenções realizadas" />
-                <Stat value={STATS.anos} label="Anos de experiência" />
-                <Stat value={STATS.taxaResolucao} label="Resolução à primeira" />
-                <Stat value="24/7" label="Sempre disponível" />
+                <Stat value={STATS.intervencoes} label="Intervenções realizadas" animate />
+                <Stat value={STATS.anos} label="Anos de experiência" animate />
+                <Stat value={STATS.taxaResolucao} label="Resolução à primeira" animate />
+                <Stat value="24/7" label="Sempre disponível" animate />
               </div>
               <div className="mt-6 rounded-xl bg-white/5 border border-white/10 p-4 flex items-center gap-3">
                 <Clock className="h-5 w-5 text-brand-light shrink-0" />
                 <p className="text-sm text-white/85">
                   Tempo médio de chegada hoje:{" "}
-                  <span className="font-bold text-white">{STATS.tempoChegadaMin} min</span>
+                  <CountUp value={STATS.tempoChegadaMin} className="font-bold text-white" />
+                  <span className="font-bold text-white"> min</span>
                 </p>
               </div>
             </div>
@@ -125,10 +127,10 @@ export const Hero = () => {
   );
 };
 
-const Stat = ({ value, label }: { value: string; label: string }) => (
+const Stat = ({ value, label, animate }: { value: string; label: string; animate?: boolean }) => (
   <div>
     <div className="text-3xl sm:text-4xl font-extrabold text-gradient-brand leading-none">
-      {value}
+      {animate ? <CountUp value={value} /> : value}
     </div>
     <div className="mt-1.5 text-xs text-white/65 leading-tight">{label}</div>
   </div>
