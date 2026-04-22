@@ -14,7 +14,116 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      intervencoes: {
+        Row: {
+          cliente_email: string
+          criado_em: string
+          data_intervencao: string
+          descricao: string | null
+          documento_url: string | null
+          estado: string
+          id: string
+          localidade: string | null
+          pedido_id: string | null
+          tipo_servico: string
+          valor_total: number | null
+        }
+        Insert: {
+          cliente_email: string
+          criado_em?: string
+          data_intervencao: string
+          descricao?: string | null
+          documento_url?: string | null
+          estado?: string
+          id?: string
+          localidade?: string | null
+          pedido_id?: string | null
+          tipo_servico: string
+          valor_total?: number | null
+        }
+        Update: {
+          cliente_email?: string
+          criado_em?: string
+          data_intervencao?: string
+          descricao?: string | null
+          documento_url?: string | null
+          estado?: string
+          id?: string
+          localidade?: string | null
+          pedido_id?: string | null
+          tipo_servico?: string
+          valor_total?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "intervencoes_pedido_id_fkey"
+            columns: ["pedido_id"]
+            isOneToOne: false
+            referencedRelation: "pedidos_orcamento"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pedidos_orcamento: {
+        Row: {
+          aceita_marketing: boolean
+          criado_em: string
+          descricao: string | null
+          distrito: string
+          email: string
+          empresa_nif: string | null
+          empresa_nome: string | null
+          estado: string
+          id: string
+          localidade: string
+          nome: string
+          notas_internas: string | null
+          origem: string | null
+          telefone: string
+          tipo_cliente: string
+          tipo_servico: string
+          urgencia: string
+        }
+        Insert: {
+          aceita_marketing?: boolean
+          criado_em?: string
+          descricao?: string | null
+          distrito: string
+          email: string
+          empresa_nif?: string | null
+          empresa_nome?: string | null
+          estado?: string
+          id?: string
+          localidade: string
+          nome: string
+          notas_internas?: string | null
+          origem?: string | null
+          telefone: string
+          tipo_cliente: string
+          tipo_servico: string
+          urgencia: string
+        }
+        Update: {
+          aceita_marketing?: boolean
+          criado_em?: string
+          descricao?: string | null
+          distrito?: string
+          email?: string
+          empresa_nif?: string | null
+          empresa_nome?: string | null
+          estado?: string
+          id?: string
+          localidade?: string
+          nome?: string
+          notas_internas?: string | null
+          origem?: string | null
+          telefone?: string
+          tipo_cliente?: string
+          tipo_servico?: string
+          urgencia?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
