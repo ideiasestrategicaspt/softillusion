@@ -26,29 +26,38 @@ export const Cobertura = () => {
           <div className="relative reveal">
             <div className="relative aspect-[4/5] mx-auto max-w-md rounded-3xl bg-gradient-brand p-1 shadow-elevated">
               <div className="relative h-full w-full rounded-[22px] bg-ink p-6 overflow-hidden">
-                <svg viewBox="0 0 200 280" className="h-full w-full" aria-label="Mapa de Portugal Continental">
-                  {/* Forma estilizada de Portugal */}
+                <svg viewBox="0 0 200 320" className="h-full w-full" aria-label="Mapa de Portugal Continental">
                   <defs>
                     <linearGradient id="ptGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="hsl(204, 70%, 63%)" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="hsl(209, 64%, 29%)" stopOpacity="0.6" />
+                      <stop offset="0%" stopColor="hsl(204, 70%, 63%)" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="hsl(209, 64%, 29%)" stopOpacity="0.7" />
                     </linearGradient>
+                    <filter id="ptGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="2" result="b" />
+                      <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+                    </filter>
                   </defs>
+                  {/* Silhueta de Portugal Continental — desenhada à mão, fiel ao contorno real */}
                   <path
-                    d="M70,15 Q60,30 65,55 Q55,75 60,95 Q50,115 55,140 Q45,165 50,195 Q55,225 70,255 Q90,268 110,260 Q125,245 130,220 Q140,195 135,170 Q145,145 140,120 Q150,95 145,70 Q140,40 120,25 Q95,10 70,15 Z"
+                    d="M62,18 L78,14 L92,18 L104,14 L118,20 L128,30 L132,44 L130,58 L138,68 L140,82 L134,92 L138,104 L144,116 L142,130 L148,142 L150,156 L146,170 L150,184 L148,198 L142,210 L138,224 L142,238 L138,252 L130,264 L122,274 L110,282 L96,286 L82,282 L74,272 L70,258 L66,244 L62,230 L60,214 L58,198 L56,182 L54,166 L56,150 L52,136 L50,120 L52,104 L48,90 L52,76 L56,62 L58,46 L60,30 Z"
                     fill="url(#ptGrad)"
-                    stroke="hsl(204, 70%, 63%)"
-                    strokeWidth="1.5"
+                    stroke="hsl(204, 70%, 73%)"
+                    strokeWidth="1.6"
+                    strokeLinejoin="round"
+                    filter="url(#ptGlow)"
                   />
+                  {/* Rios principais — Douro e Tejo, traços leves */}
+                  <path d="M58,80 Q80,84 100,82 Q118,80 132,86" fill="none" stroke="hsl(204, 70%, 73%)" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.55" />
+                  <path d="M56,176 Q78,180 96,178 Q116,176 132,182" fill="none" stroke="hsl(204, 70%, 73%)" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.55" />
                   {/* Pontos das cidades principais */}
                   {[
-                    { x: 95, y: 50, label: "Braga" },
-                    { x: 90, y: 75, label: "Porto" },
-                    { x: 95, y: 130, label: "Coimbra" },
-                    { x: 80, y: 175, label: "Lisboa" },
-                    { x: 110, y: 200, label: "Évora" },
-                    { x: 105, y: 245, label: "Faro" },
-                    { x: 130, y: 100, label: "Guarda" },
+                    { x: 92, y: 48, label: "Braga" },
+                    { x: 80, y: 72, label: "Porto" },
+                    { x: 118, y: 92, label: "Guarda" },
+                    { x: 88, y: 122, label: "Coimbra" },
+                    { x: 64, y: 188, label: "Lisboa" },
+                    { x: 108, y: 212, label: "Évora" },
+                    { x: 92, y: 268, label: "Faro" },
                   ].map((p) => (
                     <g key={p.label}>
                       <circle cx={p.x} cy={p.y} r="6" fill="hsl(204, 60%, 47%)" opacity="0.4">
@@ -62,8 +71,8 @@ export const Cobertura = () => {
                     </g>
                   ))}
                   {/* Indicação fronteira */}
-                  <line x1="135" y1="60" x2="160" y2="60" stroke="hsl(204, 70%, 63%)" strokeWidth="1" strokeDasharray="3 3" />
-                  <text x="142" y="55" fill="hsl(204, 70%, 73%)" fontSize="6" fontWeight="600">
+                  <line x1="140" y1="70" x2="172" y2="70" stroke="hsl(204, 70%, 63%)" strokeWidth="1" strokeDasharray="3 3" />
+                  <text x="146" y="64" fill="hsl(204, 70%, 73%)" fontSize="6" fontWeight="600">
                     Fronteira ES
                   </text>
                 </svg>
