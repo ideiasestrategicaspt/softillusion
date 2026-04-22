@@ -86,7 +86,7 @@ export const TESTEMUNHOS = [
     servico: "Desentupimento doméstico",
     rating: 5,
     texto:
-      "Tive a cozinha inundada às 22h de um domingo. Liguei para a Softillusion e em 25 minutos estavam cá. Resolveram tudo em menos de uma hora, sem sujar nada. Preço igual ao combinado ao telefone. Recomendo a olhos fechados.",
+      "Cozinha inundada num domingo à noite. Em 25 minutos estavam cá e resolveram em menos de uma hora. Preço igual ao combinado ao telefone.",
   },
   {
     nome: "João P.",
@@ -94,7 +94,7 @@ export const TESTEMUNHOS = [
     servico: "Manutenção B2B — Restauração",
     rating: 5,
     texto:
-      "Gerimos uma cadeia de restaurantes e temos contrato anual com a Softillusion para manutenção dos separadores de gordura. Profissionais, pontuais, com relatórios detalhados. Nunca tivemos um problema grave desde que começámos com eles.",
+      "Temos contrato anual para manutenção dos separadores de gordura nos restaurantes. Pontuais, profissionais e com relatórios detalhados sempre.",
   },
   {
     nome: "Ana R.",
@@ -102,7 +102,7 @@ export const TESTEMUNHOS = [
     servico: "Limpeza de fossa",
     rating: 5,
     texto:
-      "Marquei para a manhã seguinte e foi tudo rápido e limpo. Trouxeram a guia de transporte de resíduos, explicaram tudo e deixaram o terreno como estava. Excelente serviço.",
+      "Marquei para a manhã seguinte e foi tudo rápido e limpo. Trouxeram guia de resíduos e deixaram o terreno como estava. Excelente.",
   },
   {
     nome: "Ricardo M.",
@@ -110,7 +110,7 @@ export const TESTEMUNHOS = [
     servico: "Camião hidroaspirador",
     rating: 5,
     texto:
-      "Coletor de uma fábrica completamente entupido. A equipa chegou no próprio dia com o camião hidroaspirador e em poucas horas estava resolvido. Recomendo a empresas que precisem de resposta industrial séria.",
+      "Coletor da fábrica totalmente entupido. Vieram no próprio dia com o camião hidroaspirador e em poucas horas estava resolvido.",
   },
   {
     nome: "Sofia L.",
@@ -118,7 +118,7 @@ export const TESTEMUNHOS = [
     servico: "Desentupimento doméstico",
     rating: 5,
     texto:
-      "Atendimento incrível ao telefone, a Sra. foi simpática e tranquilizou-me. Veio um técnico fardado, identificado, super profissional. Preço justo. Já guardei o contacto.",
+      "Atendimento ao telefone simpático e tranquilizador. Técnico fardado, identificado e muito profissional. Preço justo — já guardei o contacto.",
   },
   {
     nome: "Pedro G.",
@@ -126,7 +126,7 @@ export const TESTEMUNHOS = [
     servico: "Estação elevatória — Condomínio",
     rating: 5,
     texto:
-      "Como administrador de condomínio é difícil encontrar fornecedores fiáveis. A Softillusion entrega relatório por escrito e factura mensal — exactamente o que precisamos para a contabilidade.",
+      "Como administrador de condomínio é difícil achar fornecedores fiáveis. Entregam relatório por escrito e fatura mensal — exatamente o que precisamos.",
   },
 ] as const;
 
