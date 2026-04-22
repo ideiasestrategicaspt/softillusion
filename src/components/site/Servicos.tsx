@@ -8,6 +8,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -17,7 +19,7 @@ const ICONS: Record<string, LucideIcon> = {
 export const Servicos = () => {
   const autoScroll = useRef(
     AutoScroll({
-      speed: 0.6,
+      speed: 1.2,
       startDelay: 0,
       stopOnInteraction: false,
       stopOnMouseEnter: false,
@@ -26,12 +28,12 @@ export const Servicos = () => {
   );
   const resumeTimer = useRef<number | null>(null);
 
-  const pauseFor8s = () => {
+  const pauseFor5s = () => {
     autoScroll.current.stop();
     if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
     resumeTimer.current = window.setTimeout(() => {
       autoScroll.current.play();
-    }, 8000);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -58,9 +60,9 @@ export const Servicos = () => {
         </div>
 
         <div
-          className="mt-14 reveal"
-          onClickCapture={pauseFor8s}
-          onTouchStartCapture={pauseFor8s}
+          className="mt-14 reveal relative px-12"
+          onClickCapture={pauseFor5s}
+          onTouchStartCapture={pauseFor5s}
         >
           <Carousel
             opts={{ align: "start", loop: true, dragFree: true, watchDrag: false }}
@@ -96,6 +98,8 @@ export const Servicos = () => {
                 );
               })}
             </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
           </Carousel>
         </div>
       </div>
