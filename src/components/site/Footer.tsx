@@ -1,4 +1,4 @@
-import { Phone, Mail, MessageCircle, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import logo from "@/assets/softillusion-logo.png";
 import { COMPANY } from "@/lib/constants";
 
@@ -14,15 +14,9 @@ export const Footer = () => {
               Desentupimentos e aspiração industrial 24h. {COMPANY.serviceArea}.
             </p>
             <div className="mt-5 flex gap-3">
-              <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors">
-                <Linkedin className="h-4 w-4" />
-              </a>
+              <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">IG</a>
+              <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">FB</a>
+              <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand transition-colors text-xs font-bold">in</a>
             </div>
           </div>
 
