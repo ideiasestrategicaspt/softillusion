@@ -25,7 +25,7 @@ export const Testemunhos = () => {
           </p>
         </div>
 
-        <div className="mt-14 reveal relative px-12">
+        <div className="mt-14 reveal relative px-4 sm:px-12">
           <Carousel
             opts={{ align: "start", loop: true }}
             className="w-full"
@@ -34,9 +34,9 @@ export const Testemunhos = () => {
               {TESTEMUNHOS.map((t, idx) => (
                 <CarouselItem
                   key={t.nome + idx}
-                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3"
                 >
-                  <article className="h-full relative rounded-2xl border border-border bg-card p-7 shadow-soft hover:shadow-elevated transition-all">
+                  <article className="h-full relative rounded-2xl border border-border bg-card p-5 sm:p-7 shadow-soft hover:shadow-elevated transition-all">
                     <Quote className="absolute top-5 right-5 h-8 w-8 text-brand/15" />
                     <div className="flex gap-0.5 text-brand">
                       {Array.from({ length: t.rating }).map((_, i) => (
@@ -59,8 +59,8 @@ export const Testemunhos = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
-            <CarouselNext className="right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselPrevious className="hidden sm:flex left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="hidden sm:flex right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
           </Carousel>
         </div>
 

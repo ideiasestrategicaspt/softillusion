@@ -19,7 +19,7 @@ const ICONS: Record<string, LucideIcon> = {
 export const Servicos = () => {
   const autoScroll = useRef(
     AutoScroll({
-      speed: 1.2,
+      speed: 0.6,
       startDelay: 0,
       stopOnInteraction: false,
       stopOnMouseEnter: false,
@@ -60,7 +60,7 @@ export const Servicos = () => {
         </div>
 
         <div
-          className="mt-14 reveal relative px-12"
+          className="mt-14 reveal relative px-4 sm:px-12"
           onClickCapture={pauseFor5s}
           onTouchStartCapture={pauseFor5s}
         >
@@ -75,7 +75,7 @@ export const Servicos = () => {
                 return (
                   <CarouselItem
                     key={s.id}
-                    className="pl-4 sm:basis-1/2 lg:basis-1/3"
+                    className="pl-4 basis-[75%] sm:basis-1/2 lg:basis-1/3"
                   >
                     <article className="group h-full relative rounded-2xl border border-border bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated hover:border-brand/40">
                       <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-brand transition-transform group-hover:scale-110">
@@ -98,8 +98,8 @@ export const Servicos = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
-            <CarouselNext className="right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselPrevious className="hidden sm:flex left-0 -translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="hidden sm:flex right-0 translate-x-0 h-10 w-10 bg-card border-border hover:bg-brand hover:text-white hover:border-brand" />
           </Carousel>
         </div>
       </div>

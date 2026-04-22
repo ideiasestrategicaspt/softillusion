@@ -35,7 +35,7 @@ const pilares = [
 export const Porque = () => {
   const autoScroll = useRef(
     AutoScroll({
-      speed: 1.2,
+      speed: 0.6,
       startDelay: 0,
       stopOnInteraction: false,
       stopOnMouseEnter: false,
@@ -74,7 +74,7 @@ export const Porque = () => {
         </div>
 
         <div
-          className="mt-14 reveal relative px-12"
+          className="mt-14 reveal relative px-4 sm:px-12"
           onClickCapture={pauseFor5s}
           onTouchStartCapture={pauseFor5s}
         >
@@ -87,7 +87,7 @@ export const Porque = () => {
               {pilares.map((p) => (
                 <CarouselItem
                   key={p.titulo}
-                  className="pl-4 sm:basis-1/2 lg:basis-1/3"
+                  className="pl-4 basis-[75%] sm:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full rounded-2xl border border-white/10 bg-gradient-dark-card p-7 hover:border-brand/50 hover:shadow-brand transition-all duration-300">
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand/15 text-brand-light border border-brand/30">
@@ -99,8 +99,8 @@ export const Porque = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0 -translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
-            <CarouselNext className="right-0 translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselPrevious className="hidden sm:flex left-0 -translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="hidden sm:flex right-0 translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
           </Carousel>
         </div>
       </div>
