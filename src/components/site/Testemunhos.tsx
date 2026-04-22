@@ -10,7 +10,7 @@ export const Testemunhos = () => {
             Testemunhos reais
           </p>
           <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-foreground">
-            Mais de 1500 clientes já confiaram em nós
+            Mais de 1000 clientes já confiaram em nós
           </h2>
           <p className="mt-5 text-base md:text-lg text-muted-foreground">
             Desentupir é fácil. Resolver bem é que é raro. Veja o que dizem os nossos clientes.
