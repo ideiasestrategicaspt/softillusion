@@ -1,4 +1,13 @@
+import { useEffect, useRef } from "react";
 import { Clock, Tag, Users, Truck } from "lucide-react";
+import AutoScroll from "embla-carousel-auto-scroll";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const pilares = [
   {
@@ -24,6 +33,31 @@ const pilares = [
 ];
 
 export const Porque = () => {
+  const autoScroll = useRef(
+    AutoScroll({
+      speed: 1.2,
+      startDelay: 0,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+      stopOnFocusIn: false,
+    })
+  );
+  const resumeTimer = useRef<number | null>(null);
+
+  const pauseFor5s = () => {
+    autoScroll.current.stop();
+    if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    resumeTimer.current = window.setTimeout(() => {
+      autoScroll.current.play();
+    }, 5000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    };
+  }, []);
+
   return (
     <section className="relative bg-ink text-white py-20 md:py-28">
       <div className="container-page">
@@ -39,20 +73,35 @@ export const Porque = () => {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {pilares.map((p, idx) => (
-            <div
-              key={p.titulo}
-              className="reveal rounded-2xl border border-white/10 bg-gradient-dark-card p-7 hover:border-brand/50 hover:shadow-brand transition-all duration-300"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand/15 text-brand-light border border-brand/30">
-                <p.icon className="h-7 w-7" />
-              </div>
-              <h3 className="mt-5 text-xl font-bold">{p.titulo}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/65">{p.desc}</p>
-            </div>
-          ))}
+        <div
+          className="mt-14 reveal relative px-12"
+          onClickCapture={pauseFor5s}
+          onTouchStartCapture={pauseFor5s}
+        >
+          <Carousel
+            opts={{ align: "start", loop: true, dragFree: true, watchDrag: false }}
+            plugins={[autoScroll.current]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {pilares.map((p) => (
+                <CarouselItem
+                  key={p.titulo}
+                  className="pl-4 sm:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="h-full rounded-2xl border border-white/10 bg-gradient-dark-card p-7 hover:border-brand/50 hover:shadow-brand transition-all duration-300">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand/15 text-brand-light border border-brand/30">
+                      <p.icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mt-5 text-xl font-bold">{p.titulo}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/65">{p.desc}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
+            <CarouselNext className="right-0 translate-x-0 h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-brand hover:text-white hover:border-brand" />
+          </Carousel>
         </div>
       </div>
     </section>
