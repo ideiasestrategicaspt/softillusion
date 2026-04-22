@@ -10,7 +10,7 @@ interface CountUpProps {
  * Anima um valor numérico contido numa string (ex: "+1000", "98%", "24/7", "+10").
  * Preserva prefixos/sufixos não numéricos. Se não houver número, devolve a string original.
  */
-export const CountUp = ({ value, duration = 1800, className }: CountUpProps) => {
+export const CountUp = ({ value, duration = 3500, className }: CountUpProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [display, setDisplay] = useState(value);
   const started = useRef(false);
