@@ -22,17 +22,17 @@ const URGENCIAS = [
 
 const schema = z.object({
   tipo_servico: z.string().min(1, "Selecione o serviço"),
-  urgencia: z.enum(["imediato", "hoje_amanha", "semana"], { errorMap: () => ({ message: "Selecione a urgência" }) }),
+  urgencia: z.enum(["imediato", "hoje_amanha", "semana"], { message: "Selecione a urgência" }),
   distrito: z.string().min(1, "Distrito obrigatório"),
   localidade: z.string().trim().min(2, "Localidade obrigatória").max(100),
-  tipo_cliente: z.enum(["particular", "empresa"], { errorMap: () => ({ message: "Selecione o tipo" }) }),
+  tipo_cliente: z.enum(["particular", "empresa"], { message: "Selecione o tipo" }),
   empresa_nome: z.string().trim().max(120).optional(),
   empresa_nif: z.string().trim().max(20).optional(),
   nome: z.string().trim().min(2, "Nome obrigatório").max(120),
   telefone: z.string().trim().regex(/^(\+?351\s?)?\d{9}$/, "Telemóvel inválido (9 dígitos)"),
   email: z.string().trim().email("Email inválido").max(255),
   descricao: z.string().trim().max(1000).optional(),
-  rgpd: z.literal(true, { errorMap: () => ({ message: "Tem de aceitar a política de privacidade" }) }),
+  rgpd: z.literal(true, { message: "Tem de aceitar a política de privacidade" }),
   aceita_marketing: z.boolean().optional(),
 });
 
