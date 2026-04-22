@@ -396,7 +396,7 @@ export const QuoteForm = () => {
               )}
 
               <p className="text-xs text-muted-foreground text-center">
-                🔒 Os seus dados estão seguros · Nunca partilhamos informação · Pode cancelar a qualquer momento
+                🔒 Os seus dados estão seguros · Nunca partilhamos informação
               </p>
 
               <div className="flex flex-col-reverse sm:flex-row justify-between gap-3">
