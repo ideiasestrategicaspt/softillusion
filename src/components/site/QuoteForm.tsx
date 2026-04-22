@@ -377,17 +377,6 @@ export const QuoteForm = () => {
                 />
               </Field>
 
-              <div className="space-y-3 pt-2">
-                <label className="flex items-start gap-3 text-sm text-muted-foreground cursor-pointer">
-                  <input
-                    type="checkbox"
-                    {...register("aceita_marketing")}
-                    className="mt-1 h-4 w-4 rounded border-input text-brand focus:ring-brand"
-                  />
-                  <span>Quero receber dicas e promoções da Softillusion por email.</span>
-                </label>
-              </div>
-
               {error && (
                 <div className="flex items-start gap-2 rounded-lg bg-destructive/10 border border-destructive/30 p-3 text-sm text-destructive">
                   <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
