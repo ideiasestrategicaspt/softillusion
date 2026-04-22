@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { DISTRITOS } from "@/lib/constants";
+import portugalMap from "@/assets/portugal-map.png";
 
 const principais = ["Lisboa","Porto","Coimbra","Braga","Faro","Évora","Viseu","Guarda","Bragança"];
 
@@ -26,56 +27,50 @@ export const Cobertura = () => {
           <div className="relative reveal">
             <div className="relative aspect-[4/5] mx-auto max-w-md rounded-3xl bg-gradient-brand p-1 shadow-elevated">
               <div className="relative h-full w-full rounded-[22px] bg-ink p-6 overflow-hidden">
-                <svg viewBox="0 0 200 320" className="h-full w-full" aria-label="Mapa de Portugal Continental">
-                  <defs>
-                    <linearGradient id="ptGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="hsl(204, 70%, 63%)" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="hsl(209, 64%, 29%)" stopOpacity="0.7" />
-                    </linearGradient>
-                    <filter id="ptGlow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="2" result="b" />
-                      <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-                    </filter>
-                  </defs>
-                  {/* Silhueta de Portugal Continental — desenhada à mão, fiel ao contorno real */}
-                  <path
-                    d="M62,18 L78,14 L92,18 L104,14 L118,20 L128,30 L132,44 L130,58 L138,68 L140,82 L134,92 L138,104 L144,116 L142,130 L148,142 L150,156 L146,170 L150,184 L148,198 L142,210 L138,224 L142,238 L138,252 L130,264 L122,274 L110,282 L96,286 L82,282 L74,272 L70,258 L66,244 L62,230 L60,214 L58,198 L56,182 L54,166 L56,150 L52,136 L50,120 L52,104 L48,90 L52,76 L56,62 L58,46 L60,30 Z"
-                    fill="url(#ptGrad)"
-                    stroke="hsl(204, 70%, 73%)"
-                    strokeWidth="1.6"
-                    strokeLinejoin="round"
-                    filter="url(#ptGlow)"
+                {/* Mapa real de Portugal Continental como base, com overlay azul brand */}
+                <div className="relative h-full w-full">
+                  <img
+                    src={portugalMap}
+                    alt="Mapa de Portugal Continental"
+                    className="absolute inset-0 h-full w-full object-contain opacity-90"
+                    style={{
+                      filter:
+                        "invert(1) sepia(1) saturate(6) hue-rotate(175deg) brightness(1.05) drop-shadow(0 0 8px hsl(204 70% 63% / 0.6))",
+                    }}
                   />
-                  {/* Rios principais — Douro e Tejo, traços leves */}
-                  <path d="M58,80 Q80,84 100,82 Q118,80 132,86" fill="none" stroke="hsl(204, 70%, 73%)" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.55" />
-                  <path d="M56,176 Q78,180 96,178 Q116,176 132,182" fill="none" stroke="hsl(204, 70%, 73%)" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.55" />
-                  {/* Pontos das cidades principais */}
-                  {[
-                    { x: 92, y: 48, label: "Braga" },
-                    { x: 80, y: 72, label: "Porto" },
-                    { x: 118, y: 92, label: "Guarda" },
-                    { x: 88, y: 122, label: "Coimbra" },
-                    { x: 64, y: 188, label: "Lisboa" },
-                    { x: 108, y: 212, label: "Évora" },
-                    { x: 92, y: 268, label: "Faro" },
-                  ].map((p) => (
-                    <g key={p.label}>
-                      <circle cx={p.x} cy={p.y} r="6" fill="hsl(204, 60%, 47%)" opacity="0.4">
-                        <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite" />
-                      </circle>
-                      <circle cx={p.x} cy={p.y} r="3.5" fill="hsl(204, 70%, 63%)" />
-                      <text x={p.x + 8} y={p.y + 3} fill="white" fontSize="7" fontWeight="600">
-                        {p.label}
-                      </text>
-                    </g>
-                  ))}
-                  {/* Indicação fronteira */}
-                  <line x1="140" y1="70" x2="172" y2="70" stroke="hsl(204, 70%, 63%)" strokeWidth="1" strokeDasharray="3 3" />
-                  <text x="146" y="64" fill="hsl(204, 70%, 73%)" fontSize="6" fontWeight="600">
-                    Fronteira ES
-                  </text>
-                </svg>
+                  {/* Pontos das cidades principais sobrepostos (coordenadas em % relativas ao mapa) */}
+                  <svg
+                    viewBox="0 0 200 380"
+                    className="absolute inset-0 h-full w-full"
+                    preserveAspectRatio="xMidYMid meet"
+                    aria-hidden
+                  >
+                    {[
+                      { x: 78, y: 48, label: "Braga" },
+                      { x: 70, y: 72, label: "Porto" },
+                      { x: 130, y: 100, label: "Guarda" },
+                      { x: 84, y: 138, label: "Coimbra" },
+                      { x: 62, y: 232, label: "Lisboa" },
+                      { x: 116, y: 252, label: "Évora" },
+                      { x: 96, y: 332, label: "Faro" },
+                    ].map((p) => (
+                      <g key={p.label}>
+                        <circle cx={p.x} cy={p.y} r="6" fill="hsl(204, 60%, 47%)" opacity="0.4">
+                          <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx={p.x} cy={p.y} r="3.2" fill="hsl(204, 70%, 73%)" />
+                        <text x={p.x + 7} y={p.y + 3} fill="white" fontSize="7" fontWeight="600">
+                          {p.label}
+                        </text>
+                      </g>
+                    ))}
+                    <line x1="140" y1="70" x2="172" y2="70" stroke="hsl(204, 70%, 63%)" strokeWidth="1" strokeDasharray="3 3" />
+                    <text x="144" y="64" fill="hsl(204, 70%, 73%)" fontSize="6" fontWeight="600">
+                      Fronteira ES
+                    </text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
