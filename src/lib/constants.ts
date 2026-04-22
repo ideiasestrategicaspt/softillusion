@@ -118,7 +118,7 @@ export const TESTEMUNHOS = [
     servico: "Desentupimento doméstico",
     rating: 5,
     texto:
-      "Atendimento ao telefone simpático e tranquilizador. Técnico fardado, identificado e muito profissional. Preço justo — já guardei o contacto.",
+      "Atendimento ao telefone simpático e tranquilizador. Técnico fardado, identificado e muito profissional. Já guardei o contacto.",
   },
   {
     nome: "Pedro G.",
