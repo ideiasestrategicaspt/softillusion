@@ -1,11 +1,4 @@
-import { Building2, FileText, BadgeCheck, Users, ArrowRight } from "lucide-react";
-
-const beneficios = [
-  { icon: BadgeCheck, titulo: "Resposta prioritária com SLA definido" },
-  { icon: FileText, titulo: "Faturação mensal e gestão de conta dedicada" },
-  { icon: Building2, titulo: "Relatórios técnicos após cada intervenção" },
-  { icon: Users, titulo: "Equipamento e equipas próprias — sem subcontratação" },
-];
+import { ArrowRight } from "lucide-react";
 
 export const B2B = () => {
   return (
@@ -21,8 +14,8 @@ export const B2B = () => {
             aria-hidden
           />
 
-          <div className="relative grid lg:grid-cols-2 gap-10 items-center">
-            <div>
+          <div className="relative">
+            <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">
                 Soluções para empresas
               </p>
@@ -42,20 +35,6 @@ export const B2B = () => {
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-
-            <ul className="space-y-4">
-              {beneficios.map(({ icon: Icon, titulo }) => (
-                <li
-                  key={titulo}
-                  className="flex items-start gap-4 rounded-xl bg-white/10 backdrop-blur border border-white/15 p-4"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span className="font-semibold text-white">{titulo}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
